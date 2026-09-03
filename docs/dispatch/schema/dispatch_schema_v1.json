@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Daejeon dispatch full dataset v1",
+  "type": "object",
+  "required": ["schemaVersion", "dataVersion", "versionName", "generatedAt", "routes"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "dataVersion": {"type": "integer", "minimum": 1, "maximum": 2147483647},
+    "versionName": {"$ref": "#/$defs/text"},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "routes": {"type": "array", "minItems": 1, "maxItems": 500, "items": {"$ref": "#/$defs/route"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 1000, "pattern": "\\S"},
+    "nullableText": {"anyOf": [{"$ref": "#/$defs/text"}, {"type": "null"}]},
+    "id": {"type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9_-]{0,79}$"},
+    "date": {"type": "string", "format": "date", "pattern": "^2[01][0-9]{2}-[0-9]{2}-[0-9]{2}$"},
+    "endDate": {"anyOf": [{"$ref": "#/$defs/date"}, {"type": "null"}]},
+    "route": {
+      "type": "object",
+      "required": ["id", "routeNumber", "routeName", "routeDescription", "vehicleCount", "sharedWeekendSchedule", "badge", "secondaryBadge", "activeFrom", "activeUntil", "vehicles", "timetables"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "routeNumber": {"type": "string", "pattern": "^[0-9]{1,5}$"},
+        "routeName": {"$ref": "#/$defs/text"}, "routeDescription": {"$ref": "#/$defs/text"},
+        "vehicleCount": {"type": "integer", "minimum": 1, "maximum": 200},
+        "sharedWeekendSchedule": {"type": "boolean"}, "badge": {"$ref": "#/$defs/nullableText"}, "secondaryBadge": {"$ref": "#/$defs/nullableText"},
+        "activeFrom": {"$ref": "#/$defs/date"}, "activeUntil": {"$ref": "#/$defs/endDate"},
+        "vehicles": {"type": "array", "minItems": 1, "maxItems": 200, "items": {"$ref": "#/$defs/vehicle"}},
+        "timetables": {"type": "array", "minItems": 3, "maxItems": 3000, "items": {"$ref": "#/$defs/timetable"}}
+      }
+    },
+    "vehicle": {
+      "type": "object", "required": ["id", "vehicleNumber", "note"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "vehicleNumber": {"type": "integer", "minimum": 1, "maximum": 9999}, "note": {"$ref": "#/$defs/nullableText"}}
+    },
+    "timetable": {
+      "type": "object", "required": ["id", "scheduleType", "effectiveFrom", "effectiveUntil", "selectionRestricted", "assignments"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "scheduleType": {"enum": ["weekday", "saturday", "holiday"]},
+        "effectiveFrom": {"$ref": "#/$defs/date"}, "effectiveUntil": {"$ref": "#/$defs/endDate"},
+        "selectionRestricted": {"type": "boolean"},
+        "assignments": {"type": "array", "minItems": 1, "maxItems": 200, "items": {"$ref": "#/$defs/assignment"}}
+      }
+    },
+    "assignment": {
+      "type": "object", "required": ["vehicleId", "selectable", "operator", "trips"],
+      "properties": {
+        "vehicleId": {"$ref": "#/$defs/id"}, "selectable": {"type": "boolean"}, "operator": {"$ref": "#/$defs/nullableText"},
+        "trips": {"type": "array", "maxItems": 99, "items": {"$ref": "#/$defs/trip"}}
+      }
+    },
+    "trip": {
+      "type": "object", "required": ["tripSequence", "departureTime", "dayOffset", "place"],
+      "properties": {
+        "tripSequence": {"type": "integer", "minimum": 1, "maximum": 99},
+        "departureTime": {"type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"},
+        "dayOffset": {"type": "integer", "minimum": 0, "maximum": 7}, "place": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}
