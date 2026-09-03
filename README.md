@@ -3,6 +3,15 @@
 배차알리미용 전체 JSON 배포 저장소입니다. 앱 소스·서명키·사용자 알람 예약은 포함하지 않습니다.
 현재 데이터: **dataVersion 1 / 2026.09.03-v1**, schemaVersion 1.
 
+## 공개 배포 주소
+
+- [저장소](https://github.com/Garim12/daejeon-transport-data)
+- [업데이트 manifest](https://garim12.github.io/daejeon-transport-data/dispatch/manifest.json)
+- [전체 v1 시간표](https://garim12.github.io/daejeon-transport-data/dispatch/data_v1.json)
+- [JSON Schema v1](https://garim12.github.io/daejeon-transport-data/dispatch/schema/dispatch_schema_v1.json)
+
+2026-09-03에 **main /docs**, HTTPS 배포 설정을 완료했습니다. manifest와 v1 JSON의 HTTP 200 및 다운로드 SHA-256 일치를 확인했습니다. HTML 홈페이지가 아닌 JSON 피드이므로 루트 주소 대신 위 파일 주소를 사용합니다.
+
 ## 파일 구조
 
 ```text
@@ -26,6 +35,7 @@ v1은 2026-08-23 사진을 기준으로 기존 앱에 전사되어 있던 8개 �
 2. 노선/차번 내부 ID를 표시 번호와 분리해 유지합니다. 노선 재배분은 activeUntil/activeFrom으로 처리하고 과거 노선을 삭제하지 않습니다.
 3. 시간표 변경은 이전 시간표의 effectiveUntil을 새 적용일 전날로 닫고, 새 ID의 시간표를 추가합니다. 같은 요일 유형의 기간은 겹치지 않아야 합니다.
 4. 첫 출발지 예외와 operator/selectable을 빠뜨리지 마세요. 다음날 운행은 dayOffset=1과 00:20 등의 HH:mm 시각을 사용합니다.
+   차번을 추가할 때 vehicles에 새 내부 ID를 추가하고 vehicleCount를 저장 차번 수에 맞춥니다. 과거 시간표의 assignments는 그대로 두고 새 기간의 시간표에만 새 차번을 배정합니다. 종료 차번은 삭제하지 않고 새 시간표의 배정에서 제외합니다. 화면의 운행 차번 수는 날짜별 배정/선택 가능 여부로 계산합니다.
 5. 앱 프로젝트 폴더에서 다음을 실행합니다. 마지막 인수들은 사용자에게 표시할 실제 변경내용입니다.
 
 ```powershell
@@ -44,6 +54,8 @@ manifest effectiveFrom은 안내용 적용일입니다. 실제 시간표는 각 
 앱은 약 12시간 간격 WorkManager와 앱 실행/복귀, 사용자의 수동 확인으로 manifest만 조회합니다. 새 파일은 사용자가 변경내용을 보고 승인해야 다운로드·검증·DB Transaction으로 적용됩니다. mandatory는 향후 확장용이며 현재 강제 적용하지 않습니다.
 
 네트워크/서버 장애 시 기존 로컬 데이터를 유지합니다. 업데이트는 이미 예약된 알람을 변경하지 않으며, 새 시간표를 사용하려면 해당 근무를 명시적으로 다시 선택/적용해야 합니다.
+
+앱에는 이전 정상 버전 복구 기능이 있습니다. 복구는 알람 예약을 변경하지 않습니다. 복구한 경우에도 이미 적용했던 dataVersion을 재사용하지 않으며, 관리자는 수정 내용을 포함한 더 큰 번호의 새 버전을 배포해야 합니다.
 
 ## 보안/주의
 
