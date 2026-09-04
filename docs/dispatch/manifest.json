@@ -1,17 +1,15 @@
 {
   "schemaVersion": 1,
-  "dataVersion": 2,
-  "versionName": "2026.09.04-v2",
-  "publishedAt": "2026-09-04T07:26:43.870804Z",
+  "dataVersion": 3,
+  "versionName": "2026.09.04-v3",
+  "publishedAt": "2026-09-04T11:24:28.773684Z",
   "effectiveFrom": "2026-09-04",
   "mandatory": false,
-  "dataFile": "data_v2.json",
-  "sha256": "9538aaa587dca662df2bce4856cd1a71e4eaee6bcc24ec6f337be5cbe0df5edd",
+  "dataFile": "data_v3.json",
+  "sha256": "88f7e6b265b99f12767dab3aa658194c03d6fa77f3f9b9df3607fd835f9e8188",
   "changes": [
-    "토요일 시간표 변경: 차번 2개, 운행 235→235회",
-    "기·종점 설명 변경: 원내동 ↔ 죽동 · 공동배차 → 원내차고지 ↔ 죽동 · 공동배차",
-    "평일 시간표 변경: 차번 6개, 운행 82→14회",
-    "토요일 시간표 변경: 차번 3개, 운행 54→13회",
-    "휴일 시간표 변경: 차번 3개, 운행 54→13회"
+    "공식 Excel 노선 색상 기준 정렬 정보 추가",
+    "대전교통 8개 노선의 시간표와 공동배차 담당 순번 재검증",
+    "704 평일 6번차 공식 시각 14:54 · 17:24 · 21:16 검증"
   ]
 }
