@@ -20,8 +20,24 @@
       "type": "object",
       "required": ["id", "routeNumber", "routeName", "routeDescription", "vehicleCount", "sharedWeekendSchedule", "badge", "secondaryBadge", "activeFrom", "activeUntil", "vehicles", "timetables"],
       "properties": {
-        "id": {"$ref": "#/$defs/id"}, "routeNumber": {"type": "string", "pattern": "^[0-9]{1,5}$"},
+        "id": {"$ref": "#/$defs/id"}, "routeNumber": {"type": "string", "pattern": "^(?:[0-9]{1,5}|급행[0-9]{1,3})$"},
         "routeName": {"$ref": "#/$defs/text"}, "routeDescription": {"$ref": "#/$defs/text"},
+        "routeCategory": {"enum": ["RAPID_RED", "TRUNK_BLUE", "GREEN_3_DIGIT", "GREEN_2_DIGIT", "UNKNOWN"]},
+        "sortPriority": {"type": "integer", "minimum": 0, "maximum": 4},
+        "sourceColor": {
+          "type": "object",
+          "properties": {
+            "sheetName": {"$ref": "#/$defs/text"},
+            "cellCoordinate": {"$ref": "#/$defs/text"},
+            "fillType": {"type": ["string", "null"]},
+            "colorType": {"type": ["string", "null"]},
+            "rgb": {"type": ["string", "null"]},
+            "indexed": {"type": ["integer", "null"]},
+            "theme": {"type": ["integer", "null"]},
+            "tint": {"type": "number"},
+            "normalizedRgb": {"type": ["string", "null"], "pattern": "^#[0-9A-F]{6}$"}
+          }
+        },
         "vehicleCount": {"type": "integer", "minimum": 1, "maximum": 200},
         "sharedWeekendSchedule": {"type": "boolean"}, "badge": {"$ref": "#/$defs/nullableText"}, "secondaryBadge": {"$ref": "#/$defs/nullableText"},
         "activeFrom": {"$ref": "#/$defs/date"}, "activeUntil": {"$ref": "#/$defs/endDate"},
