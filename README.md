@@ -1,22 +1,23 @@
 # 대전교통 배차 데이터
 
 배차알리미용 전체 JSON 배포 저장소입니다. 앱 소스·서명키·사용자 알람 예약은 포함하지 않습니다.
-현재 데이터: **dataVersion 1 / 2026.09.03-v1**, schemaVersion 1.
+현재 데이터: **dataVersion 3 / 2026.09.04-v3**, schemaVersion 1.
 
 ## 공개 배포 주소
 
 - [저장소](https://github.com/Garim12/daejeon-transport-data)
 - [업데이트 manifest](https://garim12.github.io/daejeon-transport-data/dispatch/manifest.json)
-- [전체 v1 시간표](https://garim12.github.io/daejeon-transport-data/dispatch/data_v1.json)
+- [최신 전체 시간표 (v3)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v3.json)
+- [최초 기준 시간표 (v1)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v1.json)
 - [JSON Schema v1](https://garim12.github.io/daejeon-transport-data/dispatch/schema/dispatch_schema_v1.json)
 
-2026-09-03에 **main /docs**, HTTPS 배포 설정을 완료했습니다. manifest와 v1 JSON의 HTTP 200 및 다운로드 SHA-256 일치를 확인했습니다. HTML 홈페이지가 아닌 JSON 피드이므로 루트 주소 대신 위 파일 주소를 사용합니다.
+**main /docs**에서 HTTPS로 배포합니다. 2026-09-04에 manifest와 최신 v3 JSON의 HTTP 응답 및 다운로드 SHA-256 일치를 다시 확인했습니다. HTML 홈페이지가 아닌 JSON 피드이므로 루트 주소 대신 위 파일 주소를 사용합니다.
 
 ## 파일 구조
 
 ```text
 docs/dispatch/manifest.json
-docs/dispatch/data_v1.json
+docs/dispatch/data_vN.json
 docs/dispatch/schema/dispatch_schema_v1.json
 ```
 
