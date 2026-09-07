@@ -54,6 +54,8 @@
       "properties": {
         "id": {"$ref": "#/$defs/id"}, "scheduleType": {"enum": ["weekday", "saturday", "holiday"]},
         "effectiveFrom": {"$ref": "#/$defs/date"}, "effectiveUntil": {"$ref": "#/$defs/endDate"},
+        "displayLabel": {"$ref": "#/$defs/nullableText"},
+        "displayCategory": {"anyOf": [{"enum": ["vacation", "special"]}, {"type": "null"}]},
         "selectionRestricted": {"type": "boolean"},
         "assignments": {"type": "array", "minItems": 1, "maxItems": 200, "items": {"$ref": "#/$defs/assignment"}}
       }
