@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "dataVersion": 4,
-  "versionName": "2026.09.13-v4",
-  "publishedAt": "2026-09-13T06:05:37.670659Z",
+  "dataVersion": 5,
+  "versionName": "2026.09.13-v5",
+  "publishedAt": "2026-09-13T08:07:02.842053Z",
   "effectiveFrom": "2026-09-13",
   "mandatory": false,
-  "dataFile": "data_v4.json",
-  "sha256": "13bbb2b9fc6ca6cfd9654df26003edc98a9a29ad411228beb58a9cb1adfd2ded",
+  "dataFile": "data_v5.json",
+  "sha256": "ae44dce93f70c5c17c4b78d349853fa8467c1330fcc26d2aa9c0c71ff770baa2",
   "changes": [
-    "201번 토요일 시간표 삭제",
-    "704번 휴일 시간표 삭제",
-    "704번 토요일 시간표 삭제",
-    "704번 평일 시간표 삭제"
+    "201번 토요일 과거 시간표 기록 복원",
+    "704번 평일 과거 시간표 기록 복원",
+    "704번 토요일 과거 시간표 기록 복원",
+    "704번 휴일 과거 시간표 기록 복원"
   ]
 }

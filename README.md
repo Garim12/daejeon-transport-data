@@ -1,17 +1,21 @@
 # 대전교통 배차 데이터
 
 배차알리미용 전체 JSON 배포 저장소입니다. 앱 소스·서명키·사용자 알람 예약은 포함하지 않습니다.
-현재 데이터: **dataVersion 3 / 2026.09.04-v3**, schemaVersion 1.
+<!-- DISPATCH_CURRENT_START -->
+현재 데이터: **dataVersion 5 / 2026.09.13-v5**, schemaVersion 1.
+
+- [최신 전체 시간표 (v5)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v5.json)
+- 배포 확인일: 2026-09-13
+<!-- DISPATCH_CURRENT_END -->
 
 ## 공개 배포 주소
 
 - [저장소](https://github.com/Garim12/daejeon-transport-data)
 - [업데이트 manifest](https://garim12.github.io/daejeon-transport-data/dispatch/manifest.json)
-- [최신 전체 시간표 (v3)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v3.json)
 - [최초 기준 시간표 (v1)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v1.json)
 - [JSON Schema v1](https://garim12.github.io/daejeon-transport-data/dispatch/schema/dispatch_schema_v1.json)
 
-**main /docs**에서 HTTPS로 배포합니다. 2026-09-04에 manifest와 최신 v3 JSON의 HTTP 응답 및 다운로드 SHA-256 일치를 다시 확인했습니다. HTML 홈페이지가 아닌 JSON 피드이므로 루트 주소 대신 위 파일 주소를 사용합니다.
+**main /docs**에서 HTTPS로 배포합니다. 최신 배포 확인일과 파일은 위 자동 갱신 영역을 기준으로 하며, HTML 홈페이지가 아닌 JSON 피드이므로 루트 주소 대신 표시된 파일 주소를 사용합니다.
 
 ## 파일 구조
 
@@ -42,8 +46,8 @@ v1은 2026-08-23 사진을 기준으로 기존 앱에 전사되어 있던 8개 �
 5. 앱 프로젝트 폴더에서 다음을 실행합니다. 마지막 인수들은 사용자에게 표시할 실제 변경내용입니다.
 
 ```powershell
-dart run tool/dispatch_data/validate.dart ../daejeon-transport-data/docs/dispatch/data_v2.json ../daejeon-transport-data/docs/dispatch/data_v1.json
-dart run tool/dispatch_data/publish.dart ../daejeon-transport-data/docs/dispatch/data_v2.json 2026-09-15 "실제 변경한 시간표 내용을 여기에 작성"
+dart run tool/dispatch_data/validate.dart path/to/data_vN.json path/to/data_v(N-1).json
+dart run tool/dispatch_data/publish.dart path/to/data_vN.json YYYY-MM-DD "실제 변경한 시간표 내용을 여기에 작성"
 ```
 
 두 번째 명령은 검증, 이전 버전/기간 보존 검사, 원본 파일 바이트의 SHA-256 계산, manifest 갱신을 한 번에 수행합니다. 오류가 있으면 manifest를 교체하지 않습니다. JSON Schema는 편집기에서도 사용할 수 있으나 중복 ID·참조·기간 충돌 등은 앱과 동일한 Dart 검증기로 추가 검사해야 합니다.
@@ -70,15 +74,15 @@ manifest effectiveFrom은 안내용 적용일입니다. 실제 시간표는 각 
 <!-- DISPATCH_STATUS_START -->
 ## 현재 배차 데이터
 
-- 데이터 버전: v4
-- 버전 이름: 2026.09.13-v4
+- 데이터 버전: v5
+- 버전 이름: 2026.09.13-v5
 - 적용일: 2026-09-13
-- 최신 파일: data_v4.json
+- 최신 파일: data_v5.json
 
 ### 업데이트 내역
 
-- 201번 토요일 시간표 삭제
-- 704번 휴일 시간표 삭제
-- 704번 토요일 시간표 삭제
-- 704번 평일 시간표 삭제
+- 201번 토요일 과거 시간표 기록 복원
+- 704번 평일 과거 시간표 기록 복원
+- 704번 토요일 과거 시간표 기록 복원
+- 704번 휴일 과거 시간표 기록 복원
 <!-- DISPATCH_STATUS_END -->
