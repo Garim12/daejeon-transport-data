@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
-  "dataVersion": 3,
-  "versionName": "2026.09.04-v3",
-  "publishedAt": "2026-09-04T11:24:28.773684Z",
-  "effectiveFrom": "2026-09-04",
+  "dataVersion": 4,
+  "versionName": "2026.09.13-v4",
+  "publishedAt": "2026-09-13T06:05:37.670659Z",
+  "effectiveFrom": "2026-09-13",
   "mandatory": false,
-  "dataFile": "data_v3.json",
-  "sha256": "88f7e6b265b99f12767dab3aa658194c03d6fa77f3f9b9df3607fd835f9e8188",
+  "dataFile": "data_v4.json",
+  "sha256": "13bbb2b9fc6ca6cfd9654df26003edc98a9a29ad411228beb58a9cb1adfd2ded",
   "changes": [
-    "공식 Excel 노선 색상 기준 정렬 정보 추가",
-    "대전교통 8개 노선의 시간표와 공동배차 담당 순번 재검증",
-    "704 평일 6번차 공식 시각 14:54 · 17:24 · 21:16 검증"
+    "201번 토요일 시간표 삭제",
+    "704번 휴일 시간표 삭제",
+    "704번 토요일 시간표 삭제",
+    "704번 평일 시간표 삭제"
   ]
 }
