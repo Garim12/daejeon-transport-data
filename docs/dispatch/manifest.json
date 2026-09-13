@@ -1,16 +1,14 @@
 {
   "schemaVersion": 1,
-  "dataVersion": 5,
-  "versionName": "2026.09.13-v5",
-  "publishedAt": "2026-09-13T08:07:02.842053Z",
+  "dataVersion": 6,
+  "versionName": "2026.09.13-v6",
+  "publishedAt": "2026-09-13T08:19:04.796125Z",
   "effectiveFrom": "2026-09-13",
   "mandatory": false,
-  "dataFile": "data_v5.json",
-  "sha256": "01a27dcc57b7ac8175c655cace1c6e191cb5575736aa1ba14a852e5d12792303",
+  "dataFile": "data_v6.json",
+  "sha256": "e93a4b8d4acea38eae0d9b2ab379b0de47ab5792b318d0b3bfe56425dd80772c",
   "changes": [
-    "201번 토요일 과거 시간표 기록 복원",
-    "704번 평일 과거 시간표 기록 복원",
-    "704번 토요일 과거 시간표 기록 복원",
-    "704번 휴일 과거 시간표 기록 복원"
+    "배차 데이터 무결성 검증 오류 수정",
+    "v5의 과거 시간표 복원 내용과 현재 운행 시간표 유지"
   ]
 }
