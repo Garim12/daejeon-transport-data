@@ -6,7 +6,7 @@
   "effectiveFrom": "2026-09-13",
   "mandatory": false,
   "dataFile": "data_v5.json",
-  "sha256": "ae44dce93f70c5c17c4b78d349853fa8467c1330fcc26d2aa9c0c71ff770baa2",
+  "sha256": "01a27dcc57b7ac8175c655cace1c6e191cb5575736aa1ba14a852e5d12792303",
   "changes": [
     "201번 토요일 과거 시간표 기록 복원",
     "704번 평일 과거 시간표 기록 복원",
