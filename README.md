@@ -2,10 +2,10 @@
 
 배차알리미용 전체 JSON 배포 저장소입니다. 앱 소스·서명키·사용자 알람 예약은 포함하지 않습니다.
 <!-- DISPATCH_CURRENT_START -->
-현재 데이터: **dataVersion 6 / 2026.09.13-v6**, schemaVersion 1.
+현재 데이터: **dataVersion 7 / 2026.09.14-v7**, schemaVersion 1.
 
-- [최신 전체 시간표 (v6)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v6.json)
-- 배포 확인일: 2026-09-13
+- [최신 전체 시간표 (v7)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v7.json)
+- 배포 확인일: 2026-09-14
 <!-- DISPATCH_CURRENT_END -->
 
 ## 공개 배포 주소
@@ -74,13 +74,13 @@ manifest effectiveFrom은 안내용 적용일입니다. 실제 시간표는 각 
 <!-- DISPATCH_STATUS_START -->
 ## 현재 배차 데이터
 
-- 데이터 버전: v6
-- 버전 이름: 2026.09.13-v6
-- 적용일: 2026-09-13
-- 최신 파일: data_v6.json
+- 데이터 버전: v7
+- 버전 이름: 2026.09.14-v7
+- 적용일: 2026-09-14
+- 최신 파일: data_v7.json
 
 ### 업데이트 내역
 
-- 배차 데이터 무결성 검증 오류 수정
-- v5의 과거 시간표 복원 내용과 현재 운행 시간표 유지
+- 66번 평일 시간표 종료 · 2026-09-13까지 사용
+- 66번 평일 시간표 새 버전 추가 · 2026-09-14부터 적용 · 활성 차번: 1번차, 2번차, 3번차, 4번차
 <!-- DISPATCH_STATUS_END -->
