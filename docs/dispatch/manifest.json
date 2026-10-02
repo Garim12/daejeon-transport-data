@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
-  "dataVersion": 10,
-  "versionName": "2026.10.01-v10",
-  "publishedAt": "2026-09-30T16:36:54.249099Z",
-  "effectiveFrom": "2026-10-01",
+  "dataVersion": 11,
+  "versionName": "2026.10.02-v11",
+  "publishedAt": "2026-10-02T13:31:46.625653Z",
+  "effectiveFrom": "2026-10-03",
   "mandatory": false,
-  "dataFile": "data_v10.json",
-  "sha256": "c6ea296fcb3893c97fe000497cfcc083ac3926f4011701ee725baa348fe1e4d4",
+  "dataFile": "data_v11.json",
+  "sha256": "b6fb635dc2aeded04585a10b51ba1a1f9777d243f3f428576a69738accf94423",
   "changes": [
-    "운행참고사항 추가"
+    "608번 토요일·휴일 4~8번차 교대 시점 수정: 서남부터미널 출발 후 → 출발 전(10월 3일부터)",
+    "이미 예약한 알람은 바뀌지 않으니, 608번 4~8번차 토요일·휴일 근무는 다시 예약해 주세요"
   ]
 }

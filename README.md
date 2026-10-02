@@ -2,10 +2,10 @@
 
 배차알리미용 전체 JSON 배포 저장소입니다. 앱 소스·서명키·사용자 알람 예약은 포함하지 않습니다.
 <!-- DISPATCH_CURRENT_START -->
-현재 데이터: **dataVersion 10 / 2026.10.01-v10**, schemaVersion 1.
+현재 데이터: **dataVersion 11 / 2026.10.02-v11**, schemaVersion 1.
 
-- [최신 전체 시간표 (v10)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v10.json)
-- 배포 확인일: 2026-09-30
+- [최신 전체 시간표 (v11)](https://garim12.github.io/daejeon-transport-data/dispatch/data_v11.json)
+- 배포 확인일: 2026-10-02
 <!-- DISPATCH_CURRENT_END -->
 
 ## 공개 배포 주소
@@ -74,12 +74,13 @@ manifest effectiveFrom은 안내용 적용일입니다. 실제 시간표는 각 
 <!-- DISPATCH_STATUS_START -->
 ## 현재 배차 데이터
 
-- 데이터 버전: v10
-- 버전 이름: 2026.10.01-v10
-- 적용일: 2026-10-01
-- 최신 파일: data_v10.json
+- 데이터 버전: v11
+- 버전 이름: 2026.10.02-v11
+- 적용일: 2026-10-03
+- 최신 파일: data_v11.json
 
 ### 업데이트 내역
 
-- 운행참고사항 추가
+- 608번 토요일·휴일 4~8번차 교대 시점 수정: 서남부터미널 출발 후 → 출발 전(10월 3일부터)
+- 이미 예약한 알람은 바뀌지 않으니, 608번 4~8번차 토요일·휴일 근무는 다시 예약해 주세요
 <!-- DISPATCH_STATUS_END -->
